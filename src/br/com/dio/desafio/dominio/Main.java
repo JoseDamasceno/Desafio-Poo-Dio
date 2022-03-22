@@ -23,10 +23,40 @@ public class Main {
 		mentoria.setDescricao("Descrição mentoria java");
 		mentoria.setDate(LocalDate.now());
 
-		System.out.println(curso1);
-		System.out.println(curso2);
-		System.out.println(mentoria);
+		
+		BootCamp bootCamp = new BootCamp();
+		bootCamp.setNome("Bootcamp java Developer");
+		bootCamp.setDescricao("Descrição Bootcamp Java Developer");
+		bootCamp.getConteudos().add(curso1);
+		bootCamp.getConteudos().add(curso2);
+		bootCamp.getConteudos().add(mentoria);
+		
+		Dev devJose = new Dev();
+		devJose.setNome("José Damasceno");
+		devJose.inscreverBootCamp(bootCamp);
+		System.out.println("Conteurdos Inscritos de " + devJose.getNome() + devJose.getConteudosInscritos() );
+		devJose.progredir();
+		devJose.progredir();
+		devJose.progredir();
+		System.out.println("=");
+		System.out.println("Conteurdos Concluidos de " + devJose.getNome() + devJose.getConteudosConcluidos());
+		System.out.println("XPs:" + devJose.calcularTodalXp());
+		
+		
+		System.out.println("=======");
 
+		Dev devLais = new Dev();
+		devLais.setNome("Lais de Paula");
+		devLais.inscreverBootCamp(bootCamp);
+		System.out.println("Conteurdos Inscritos " + devLais.getNome() + devLais.getConteudosInscritos());
+		System.out.println("=");
+		System.out.println("Conteurdos Concluidos de " + devLais.getNome() + devLais.getConteudosConcluidos());
+		devLais.progredir();
+		System.out.println("XPs:" + devLais.calcularTodalXp());
+
+		
+		
+		
 	}
 
 }
